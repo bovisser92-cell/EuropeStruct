@@ -2,19 +2,16 @@
 HANDLEIDING — EuropeStruct Website
 ===================================================
 
-1. GEGEVENS INVULLEN (voordat u live gaat)
-   Zoek in alle HTML-bestanden naar de volgende placeholders en vervang ze:
+1. GEGEVENS
+   Adres (Zijpendaalseweg 8, 6814 CK Arnhem) en telefoonnummer (+31 6 45166016)
+   staan inmiddels overal correct verwerkt, inclusief klikbare tel-links.
 
-   - "Adres volgt"           → uw werkelijke vestigingsadres
-                                 (staat in: contact.html, privacybeleid.html,
-                                 en in de footer van index.html, diensten.html, over-ons.html)
-   - "Telefoonnummer volgt"  → uw telefoonnummer
-                                 (staat in dezelfde bestanden als hierboven)
+   Nog te controleren:
    - "info@europestruct.com" → pas aan indien u een ander e-mailadres gebruikt
                                  (dit adres is nu overal alvast ingevuld als voorbeeld)
 
    Tip: gebruik in een teksteditor (bv. VS Code, Kladblok++) de functie
-   "Zoeken en vervangen in map" om dit in één keer voor alle bestanden te doen.
+   "Zoeken en vervangen in map" als u later iets wilt aanpassen.
 
 2. LOGO
    Het logo is een SVG-bestand: assets/img/icon.svg (het "skyline met kraan"-beeldmerk),
