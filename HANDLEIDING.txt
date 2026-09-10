@@ -1,0 +1,101 @@
+===================================================
+HANDLEIDING — EuropeStruct Website
+===================================================
+
+1. GEGEVENS INVULLEN (voordat u live gaat)
+   Zoek in alle HTML-bestanden naar de volgende placeholders en vervang ze:
+
+   - "Adres volgt"           → uw werkelijke vestigingsadres
+                                 (staat in: contact.html, privacybeleid.html,
+                                 en in de footer van index.html, diensten.html, over-ons.html)
+   - "Telefoonnummer volgt"  → uw telefoonnummer
+                                 (staat in dezelfde bestanden als hierboven)
+   - "info@europestruct.com" → pas aan indien u een ander e-mailadres gebruikt
+                                 (dit adres is nu overal alvast ingevuld als voorbeeld)
+
+   Tip: gebruik in een teksteditor (bv. VS Code, Kladblok++) de functie
+   "Zoeken en vervangen in map" om dit in één keer voor alle bestanden te doen.
+
+2. LOGO
+   Het logo is een SVG-bestand: assets/img/icon.svg (het "skyline met kraan"-beeldmerk),
+   gecombineerd met de tekst "EuropeStruct" die direct in de HTML staat (geen aparte
+   afbeelding nodig, dus altijd scherp op elk scherm). Wilt u een ander logo? Vervang dan
+   assets/img/icon.svg door uw eigen bestand (zelfde bestandsnaam), of pas de kleuren aan
+   via de variabelen --clr-primary / --clr-accent bovenaan assets/css/style.css.
+
+3. FAVICON
+   De favicons (browsertabblad-icoon) zijn al gegenereerd op basis van het logo:
+   assets/img/favicon-16.png, favicon-32.png, favicon-48.png, apple-touch-icon.png,
+   icon-192.png en favicon-512.png. Bij een nieuw logo kunt u deze opnieuw laten
+   genereren, of handmatig vervangen (zelfde bestandsnamen en afmetingen aanhouden).
+
+4. PROJECTFOTO'S
+   Op de plekken waar nu "Projectfoto volgt" staat (homepage, diensten- en over ons-pagina)
+   ziet u een blauw vlak met een pictogram. Dit is een nette placeholder — vervang deze
+   door echte projectfoto's zodra u die heeft:
+   - Zet uw foto in assets/img/ (bv. project-1.jpg)
+   - Vervang het <div class="img-placeholder">...</div> blok door:
+     <img src="assets/img/project-1.jpg" alt="Omschrijving" style="width:100%;height:100%;
+     object-fit:cover;min-height:340px;border-radius:var(--radius-lg);" loading="lazy">
+
+5. CONTACTFORMULIER WERKEND MAKEN
+   Het formulier op contact.html is volledig uitgewerkt maar nog niet gekoppeld.
+   Ga naar https://formspree.io en maak een gratis account + formulier aan.
+   Vervang in contact.html:  action="#"
+   door:                     action="https://formspree.io/f/UWCODE"
+   (UWCODE = de code die Formspree u geeft). Verder hoeft u niets te doen.
+
+===================================================
+6. DOMEIN KOPPELEN: GITHUB + STRATO (www.europestruct.com)
+===================================================
+
+STAP A — Repository aanmaken op GitHub
+   1. Log in op https://github.com en maak een nieuwe repository aan,
+      bijvoorbeeld genaamd "europestruct-website" (publiek, want GitHub Pages
+      op een gratis account vereist een publieke repository).
+   2. Upload alle bestanden uit deze map (inclusief de map assets/) naar de
+      root van die repository. Dat kan via de GitHub-website (drag & drop)
+      of via git:
+        git init
+        git remote add origin https://github.com/UWGEBRUIKERSNAAM/europestruct-website.git
+        git add .
+        git commit -m "Eerste versie EuropeStruct website"
+        git branch -M main
+        git push -u origin main
+
+STAP B — GitHub Pages activeren
+   1. Ga in de repository naar Settings → Pages.
+   2. Kies bij "Source": Deploy from a branch → branch "main", map "/ (root)".
+   3. Voeg een bestand toe genaamd "CNAME" (zonder extensie) in de root van
+      de repository met daarin exact:
+        www.europestruct.com
+   4. Vink onderaan bij Pages de optie "Enforce HTTPS" aan zodra deze
+      beschikbaar wordt (dit kan pas nadat de domeinkoppeling hieronder is
+      voltooid en gevalideerd).
+
+STAP C — DNS instellen bij Strato
+   Log in op uw Strato-klantenpaneel en ga naar domeinbeheer / DNS-instellingen
+   van europestruct.com. Voeg de volgende records toe:
+
+   Voor het kale domein (europestruct.com), 4 A-records naar GitHub Pages:
+     Type A   Naam @ (of leeg)   Waarde 185.199.108.153
+     Type A   Naam @ (of leeg)   Waarde 185.199.109.153
+     Type A   Naam @ (of leeg)   Waarde 185.199.110.153
+     Type A   Naam @ (of leeg)   Waarde 185.199.111.153
+
+   Voor het www-subdomein (www.europestruct.com), 1 CNAME-record:
+     Type CNAME   Naam www   Waarde UWGEBRUIKERSNAAM.github.io.
+
+   Verwijder eventuele bestaande A- of CNAME-records op @ en www die naar een
+   andere (oude) hostingpartij verwijzen — anders ontstaat er een conflict.
+
+STAP D — Controleren
+   DNS-wijzigingen kunnen enkele uren (soms tot 24 uur) duren voordat ze overal
+   zijn doorgevoerd. Controleer de status op:
+     https://www.whatsmydns.net  (zoek op europestruct.com en www.europestruct.com)
+   Zodra dit goed staat, toont GitHub Pages bij Settings → Pages een groen
+   vinkje "DNS check successful" en kunt u "Enforce HTTPS" aanvinken.
+
+   Uw website is daarna bereikbaar op https://www.europestruct.com
+
+===================================================
