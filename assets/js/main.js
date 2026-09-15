@@ -124,7 +124,10 @@
   var banner = document.getElementById('cookieBanner');
   if (!banner) return;
 
-  if (localStorage.getItem(COOKIE_KEY)) {
+  var consent = null;
+  try { consent = localStorage.getItem(COOKIE_KEY); } catch (e) { consent = null; }
+
+  if (consent) {
     banner.classList.add('hidden');
     return;
   }

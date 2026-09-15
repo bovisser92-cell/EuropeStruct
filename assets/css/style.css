@@ -989,7 +989,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   z-index: 9999;
   background: #fff;
   border-top: 3px solid var(--clr-primary);
-  box-shadow: 0 -4px 24px rgba(8,26,48,.13);
+  box-shadow: 0 -4px 24px rgba(2,44,95,.13);
   padding: 20px 0;
   transform: translateY(0);
   transition: transform .4s ease;
