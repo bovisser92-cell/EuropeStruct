@@ -13,29 +13,27 @@ HANDLEIDING — EuropeStruct Website
    Tip: gebruik in een teksteditor (bv. VS Code, Kladblok++) de functie
    "Zoeken en vervangen in map" als u later iets wilt aanpassen.
 
-2. LOGO
-   Het logo is een SVG-bestand: assets/img/icon.svg (het "skyline met kraan"-beeldmerk),
-   gecombineerd met de tekst "EuropeStruct" die direct in de HTML staat (geen aparte
-   afbeelding nodig, dus altijd scherp op elk scherm). Wilt u een ander logo? Vervang dan
-   assets/img/icon.svg door uw eigen bestand (zelfde bestandsnaam), of pas de kleuren aan
-   via de variabelen --clr-primary / --clr-accent bovenaan assets/css/style.css.
+2. LOGO EN FAVICON
+   Uw eigen logo (assets/img/logo.png) staat verwerkt in de header en footer van elke
+   pagina. De favicons (browsertabblad-icoon) zijn automatisch gegenereerd op basis van
+   uw logo-beeldmerk: assets/img/favicon-16.png, favicon-32.png, favicon-48.png,
+   apple-touch-icon.png, icon-192.png en favicon-512.png.
+   De websitekleuren (navy #022c5f, staalblauw #01a1e9, grijs #7b828c) zijn overgenomen
+   uit uw logo — zie de variabelen --clr-primary / --clr-secondary / --clr-accent
+   bovenaan assets/css/style.css als u dit later wilt aanpassen.
 
-3. FAVICON
-   De favicons (browsertabblad-icoon) zijn al gegenereerd op basis van het logo:
-   assets/img/favicon-16.png, favicon-32.png, favicon-48.png, apple-touch-icon.png,
-   icon-192.png en favicon-512.png. Bij een nieuw logo kunt u deze opnieuw laten
-   genereren, of handmatig vervangen (zelfde bestandsnamen en afmetingen aanhouden).
+   Wilt u een nieuw logo? Vervang assets/img/logo.png door uw eigen bestand (zelfde
+   bestandsnaam) en laat de favicons opnieuw genereren, of vervang ze handmatig
+   (zelfde bestandsnamen en afmetingen aanhouden).
 
-4. PROJECTFOTO'S
-   Op de plekken waar nu "Projectfoto volgt" staat (homepage, diensten- en over ons-pagina)
-   ziet u een blauw vlak met een pictogram. Dit is een nette placeholder — vervang deze
-   door echte projectfoto's zodra u die heeft:
-   - Zet uw foto in assets/img/ (bv. project-1.jpg)
-   - Vervang het <div class="img-placeholder">...</div> blok door:
-     <img src="assets/img/project-1.jpg" alt="Omschrijving" style="width:100%;height:100%;
-     object-fit:cover;min-height:340px;border-radius:var(--radius-lg);" loading="lazy">
+3. PROJECTFOTO'S
+   De 4 door u aangeleverde foto's staan verwerkt op de homepage, de diensten- en de
+   over ons-pagina (assets/img/project-structure.jpg, project-engineering.jpg,
+   project-management-1.jpg en project-management-2.jpg). Wilt u een foto vervangen?
+   Zet de nieuwe foto in assets/img/ en pas het src-attribuut van de betreffende
+   <img>-tag aan in de betreffende HTML-pagina.
 
-5. CONTACTFORMULIER WERKEND MAKEN
+4. CONTACTFORMULIER WERKEND MAKEN
    Het formulier op contact.html is volledig uitgewerkt maar nog niet gekoppeld.
    Ga naar https://formspree.io en maak een gratis account + formulier aan.
    Vervang in contact.html:  action="#"
@@ -43,22 +41,11 @@ HANDLEIDING — EuropeStruct Website
    (UWCODE = de code die Formspree u geeft). Verder hoeft u niets te doen.
 
 ===================================================
-6. DOMEIN KOPPELEN: GITHUB + STRATO (www.europestruct.com)
+5. DOMEIN KOPPELEN: GITHUB + STRATO (www.europestruct.com)
 ===================================================
 
-STAP A — Repository aanmaken op GitHub
-   1. Log in op https://github.com en maak een nieuwe repository aan,
-      bijvoorbeeld genaamd "europestruct-website" (publiek, want GitHub Pages
-      op een gratis account vereist een publieke repository).
-   2. Upload alle bestanden uit deze map (inclusief de map assets/) naar de
-      root van die repository. Dat kan via de GitHub-website (drag & drop)
-      of via git:
-        git init
-        git remote add origin https://github.com/UWGEBRUIKERSNAAM/europestruct-website.git
-        git add .
-        git commit -m "Eerste versie EuropeStruct website"
-        git branch -M main
-        git push -u origin main
+De repository staat al klaar op https://github.com/bovisser92-cell/EuropeStruct
+(inclusief het CNAME-bestand). U hoeft alleen nog het volgende te doen:
 
 STAP B — GitHub Pages activeren
    1. Ga in de repository naar Settings → Pages.

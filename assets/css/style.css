@@ -5,14 +5,14 @@
 
 /* ─── CSS Variables ─── */
 :root {
-  --clr-primary:     #0b2545;   /* diepe staalblauw navy */
-  --clr-secondary:   #123a63;   /* middenblauw — dominant merk */
-  --clr-accent:      #d99a2b;   /* goud/amber accent */
-  --clr-accent-lite: #f7e8c9;
-  --clr-dark:        #081a30;   /* diepste navy */
-  --clr-light:       #f5f7fa;
+  --clr-primary:     #022c5f;   /* diepe navy — exact uit logo */
+  --clr-secondary:   #0d5f96;   /* middenblauw tussen navy en accent */
+  --clr-accent:      #01a1e9;   /* helder staalblauw — exact uit logo */
+  --clr-accent-lite: #d6f0fb;
+  --clr-dark:        #021b3d;   /* diepste navy */
+  --clr-light:       #f4f7fa;
   --clr-white:       #ffffff;
-  --clr-grey:        #6b7280;
+  --clr-grey:        #7b828c;   /* steelgrijs — exact uit logo */
   --clr-text:        #1e293b;
   --clr-text-light:  #64748b;
   --clr-border:      #e2e8f0;
@@ -25,9 +25,9 @@
   --radius:     8px;
   --radius-lg:  14px;
 
-  --shadow-sm:  0 1px 4px rgba(8,26,48,.08);
-  --shadow-md:  0 4px 18px rgba(8,26,48,.12);
-  --shadow-lg:  0 8px 40px rgba(8,26,48,.18);
+  --shadow-sm:  0 1px 4px rgba(2,44,95,.08);
+  --shadow-md:  0 4px 18px rgba(2,44,95,.12);
+  --shadow-lg:  0 8px 40px rgba(2,44,95,.18);
 
   --transition: 0.28s ease;
   --header-h:   80px;
@@ -122,7 +122,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   color: var(--clr-dark);
   border-color: var(--clr-accent);
 }
-.btn--primary:hover { background: #c78a20; border-color: #c78a20; }
+.btn--primary:hover { background: #0288c7; border-color: #0288c7; }
 
 .btn--outline {
   background: transparent;
@@ -258,7 +258,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: var(--clr-dark);
+  background: var(--clr-dark) url('../img/project-structure.jpg') center/cover no-repeat;
   padding-top: var(--header-h);
 }
 
@@ -267,7 +267,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, #081a30 0%, #0b2545 45%, #123a63 75%, #1d5590 100%);
+    linear-gradient(120deg, rgba(2,27,61,.95) 0%, rgba(2,44,95,.92) 40%, rgba(13,95,150,.82) 75%, rgba(1,161,233,.55) 100%);
   z-index: 0;
 }
 .hero::after {
@@ -275,8 +275,8 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(217,154,43,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(217,154,43,.06) 1px, transparent 1px);
+    linear-gradient(rgba(1,161,233,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1,161,233,.07) 1px, transparent 1px);
   background-size: 48px 48px;
   z-index: 1;
 }
@@ -360,7 +360,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(217,154,43,.16) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(1,161,233,.20) 0%, transparent 70%);
   z-index: 1;
   pointer-events: none;
 }
@@ -371,7 +371,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(29,85,144,.28) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(13,95,150,.32) 0%, transparent 70%);
   z-index: 1;
   pointer-events: none;
 }
@@ -479,7 +479,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
    CTA BANNER
    ============================================================ */
 .cta-banner {
-  background: linear-gradient(135deg, #0b2545 0%, #123a63 60%, #1d5590 100%);
+  background: linear-gradient(135deg, #022c5f 0%, #0d5f96 60%, #01a1e9 100%);
   padding: 72px 0;
   text-align: center;
   position: relative;
@@ -532,7 +532,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
 
 /* Placeholder visual for when no real project photo is available yet */
 .img-placeholder {
-  background: linear-gradient(135deg, #0b2545 0%, #1d5590 100%);
+  background: linear-gradient(135deg, #022c5f 0%, #0d5f96 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -548,7 +548,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   text-align: center;
   padding: 24px;
 }
-.img-placeholder svg { width: 56px; height: 56px; color: rgba(217,154,43,.55); }
+.img-placeholder svg { width: 56px; height: 56px; color: rgba(1,161,233,.55); }
 
 .two-col-text .section-tag { display: block; }
 .two-col-text .section-title { font-size: clamp(1.5rem, 3vw, 2rem); text-align: left; }
@@ -739,7 +739,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
 .form-group textarea:focus,
 .form-group select:focus {
   border-color: var(--clr-accent);
-  box-shadow: 0 0 0 3px rgba(217,154,43,.18);
+  box-shadow: 0 0 0 3px rgba(1,161,233,.18);
 }
 .form-group textarea { min-height: 130px; resize: vertical; }
 
@@ -769,7 +769,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
    ============================================================ */
 .page-header {
   padding: calc(var(--header-h) + 72px) 0 72px;
-  background: linear-gradient(135deg, #081a30 0%, #0b2545 60%, #123a63 100%);
+  background: linear-gradient(135deg, #021b3d 0%, #022c5f 60%, #0d5f96 100%);
   position: relative;
   overflow: hidden;
 }
@@ -778,8 +778,8 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(217,154,43,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(217,154,43,.05) 1px, transparent 1px);
+    linear-gradient(rgba(1,161,233,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1,161,233,.07) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 .page-header .container { position: relative; z-index: 1; }
