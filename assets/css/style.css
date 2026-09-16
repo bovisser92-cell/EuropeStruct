@@ -180,7 +180,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   flex-shrink: 0;
 }
 .logo img {
-  height: 46px;
+  height: 58px;
   width: auto;
 }
 .logo-fallback {
@@ -193,6 +193,16 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   letter-spacing: -.01em;
 }
 .logo-fallback span { color: var(--clr-accent); }
+
+/* Footer logo sits on a dark background — the logo artwork itself is dark,
+   so give it a light card to stay legible */
+.footer-brand .logo {
+  background: var(--clr-white);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  display: inline-flex;
+}
+.footer-brand .logo img { height: 48px; }
 
 .main-nav {
   display: flex;
@@ -349,6 +359,12 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   font-size: .82rem;
   color: rgba(255,255,255,.85);
   font-weight: 500;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+.hero-badge:hover {
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.3);
+  transform: translateY(-1px);
 }
 .hero-badge svg { color: var(--clr-accent); }
 
@@ -821,7 +837,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-.footer-brand .logo-fallback { color: var(--clr-white); }
+.footer-brand .logo-fallback { color: var(--clr-primary); }
 .footer-brand p {
   font-size: .88rem;
   line-height: 1.7;
