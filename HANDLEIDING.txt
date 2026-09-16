@@ -33,12 +33,12 @@ HANDLEIDING — EuropeStruct Website
    Zet de nieuwe foto in assets/img/ en pas het src-attribuut van de betreffende
    <img>-tag aan in de betreffende HTML-pagina.
 
-4. CONTACTFORMULIER WERKEND MAKEN
-   Het formulier op contact.html is volledig uitgewerkt maar nog niet gekoppeld.
-   Ga naar https://formspree.io en maak een gratis account + formulier aan.
-   Vervang in contact.html:  action="#"
-   door:                     action="https://formspree.io/f/UWCODE"
-   (UWCODE = de code die Formspree u geeft). Verder hoeft u niets te doen.
+4. CONTACTFORMULIER
+   Het formulier op contact.html is gekoppeld aan Formspree
+   (https://formspree.io/f/xwlpeaev). Inzendingen komen binnen op het
+   e-mailadres waarmee dit Formspree-formulier is aangemaakt. Wilt u dit
+   wijzigen naar een ander formulier? Vervang dan in contact.html het
+   action-attribuut van het <form>-element door uw eigen Formspree-URL.
 
 ===================================================
 5. DOMEIN KOPPELEN: GITHUB + STRATO (www.europestruct.com)
