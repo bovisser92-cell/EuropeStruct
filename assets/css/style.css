@@ -233,6 +233,31 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
 .main-nav a.active::after { transform: scaleX(1); }
 .main-nav a.active { color: var(--clr-secondary); font-weight: 600; }
 
+/* Language switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px solid var(--clr-border);
+}
+.lang-switcher a {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  padding: 5px 9px;
+  border-radius: 4px;
+  color: var(--clr-grey);
+  transition: color var(--transition), background var(--transition);
+}
+.lang-switcher a:hover,
+.lang-switcher a.active {
+  color: var(--clr-primary);
+  background: var(--clr-light);
+}
+.lang-switcher a.active { color: var(--clr-secondary); }
+
 /* Hamburger */
 .nav-toggle {
   display: none;
@@ -950,6 +975,8 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
   .main-nav.open { display: flex; }
   .main-nav a { padding: 12px 8px; font-size: 1rem; }
   .nav-toggle { display: flex; }
+  /* lang-switcher volledig verborgen in de header op mobiel — zit al in het mobiele menu */
+  .lang-switcher { display: none !important; }
 
   /* Mobile nav (JS controlled) */
   .nav-menu {
@@ -974,6 +1001,20 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; color: var(--clr-primar
     color: var(--clr-text);
   }
   .nav-menu a:hover { color: var(--clr-secondary); }
+  .nav-menu .lang-row {
+    display: flex;
+    gap: 8px;
+    padding: 20px 12px 8px;
+  }
+  .nav-menu .lang-row a {
+    border: 1px solid var(--clr-border);
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: .85rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--clr-border);
+  }
+  .nav-menu .lang-row a.active { background: var(--clr-light); color: var(--clr-secondary); }
 
   /* layout */
   .services-grid { grid-template-columns: 1fr; }

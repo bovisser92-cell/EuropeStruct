@@ -34,52 +34,45 @@ HANDLEIDING — EuropeStruct Website
    <img>-tag aan in de betreffende HTML-pagina.
 
 4. CONTACTFORMULIER
-   Het formulier op contact.html is gekoppeld aan Formspree
-   (https://formspree.io/f/xwlpeaev). Inzendingen komen binnen op het
+   Het formulier op contact.html (en de vertaalde varianten) is gekoppeld aan
+   Formspree (https://formspree.io/f/xwlpeaev). Inzendingen komen binnen op het
    e-mailadres waarmee dit Formspree-formulier is aangemaakt. Wilt u dit
-   wijzigen naar een ander formulier? Vervang dan in contact.html het
+   wijzigen naar een ander formulier? Vervang dan in elke contact-pagina het
    action-attribuut van het <form>-element door uw eigen Formspree-URL.
 
+5. MEERTALIGE SITE (NL / EN / DE / ES)
+   De website bestaat nu in vier talen. De map assets/ (logo, foto's, CSS, JS)
+   wordt door alle taalversies gedeeld — pas u daar iets aan, dan verandert dit
+   automatisch overal.
+
+   Structuur:
+     /                    Nederlands (standaard)
+     /en/                 Engels
+     /de/                 Duits
+     /es/                 Spaans
+
+   Paginanamen per taal:
+     NL              EN                DE                      ES
+     index.html      index.html        index.html              index.html
+     diensten.html   services.html     dienstleistungen.html   servicios.html
+     over-ons.html   about.html        ueber-uns.html          sobre-nosotros.html
+     contact.html    contact.html      kontakt.html            contacto.html
+     privacybeleid   privacy-policy    datenschutz.html        politica-de-privacidad
+     .html           .html                                     .html
+
+   Rechtsboven in de header (en onderaan het mobiele menu) staat een
+   taalwisselaar (NL / EN / DE / ES) die naar de overeenkomstige pagina in de
+   andere taal linkt. Wilt u tekst in een van de talen aanpassen? Zoek de
+   betreffende pagina op in de map van die taal en bewerk de tekst direct in
+   de HTML — de opmaak (CSS-klassen) hoeft u niet aan te passen.
+
 ===================================================
-5. DOMEIN KOPPELEN: GITHUB + STRATO (www.europestruct.com)
+6. DOMEIN: WWW.EUROPESTRUCT.COM (live)
 ===================================================
 
-De repository staat al klaar op https://github.com/bovisser92-cell/EuropeStruct
-(inclusief het CNAME-bestand). U hoeft alleen nog het volgende te doen:
-
-STAP B — GitHub Pages activeren
-   1. Ga in de repository naar Settings → Pages.
-   2. Kies bij "Source": Deploy from a branch → branch "main", map "/ (root)".
-   3. Voeg een bestand toe genaamd "CNAME" (zonder extensie) in de root van
-      de repository met daarin exact:
-        www.europestruct.com
-   4. Vink onderaan bij Pages de optie "Enforce HTTPS" aan zodra deze
-      beschikbaar wordt (dit kan pas nadat de domeinkoppeling hieronder is
-      voltooid en gevalideerd).
-
-STAP C — DNS instellen bij Strato
-   Log in op uw Strato-klantenpaneel en ga naar domeinbeheer / DNS-instellingen
-   van europestruct.com. Voeg de volgende records toe:
-
-   Voor het kale domein (europestruct.com), 4 A-records naar GitHub Pages:
-     Type A   Naam @ (of leeg)   Waarde 185.199.108.153
-     Type A   Naam @ (of leeg)   Waarde 185.199.109.153
-     Type A   Naam @ (of leeg)   Waarde 185.199.110.153
-     Type A   Naam @ (of leeg)   Waarde 185.199.111.153
-
-   Voor het www-subdomein (www.europestruct.com), 1 CNAME-record:
-     Type CNAME   Naam www   Waarde UWGEBRUIKERSNAAM.github.io.
-
-   Verwijder eventuele bestaande A- of CNAME-records op @ en www die naar een
-   andere (oude) hostingpartij verwijzen — anders ontstaat er een conflict.
-
-STAP D — Controleren
-   DNS-wijzigingen kunnen enkele uren (soms tot 24 uur) duren voordat ze overal
-   zijn doorgevoerd. Controleer de status op:
-     https://www.whatsmydns.net  (zoek op europestruct.com en www.europestruct.com)
-   Zodra dit goed staat, toont GitHub Pages bij Settings → Pages een groen
-   vinkje "DNS check successful" en kunt u "Enforce HTTPS" aanvinken.
-
-   Uw website is daarna bereikbaar op https://www.europestruct.com
+De site staat live op https://www.europestruct.com via GitHub Pages
+(repository: https://github.com/bovisser92-cell/EuropeStruct). DNS bij Strato
+en het SSL-certificaat zijn al correct ingesteld — hier hoeft u niets meer
+aan te doen, tenzij u ooit van hostingpartij wisselt.
 
 ===================================================
